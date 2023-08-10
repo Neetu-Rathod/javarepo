@@ -1,0 +1,152 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <style>
+      .error{
+        color:red;
+      }
+  </style>
+</head>
+<body>
+    <form action="doSave.html">
+    <table border="1">
+        <tr>
+            <td>Name:</td>
+            <td><input type="text"  id ="name" name="name"/>
+            <br><span class="error" id ="nameError"></span></td>
+        </tr>
+        <tr> 
+            <td>Email:</td>
+            <td><input type="text" id ="email" name="email"/></td>
+        </tr>
+        <tr>
+            <td>Moblie No:</td>
+            <td><input type="text" id="moblie" name="moblie"/></td>
+        </tr>
+         <tr>
+            <td>Gender:</td>
+            <td><input type="radio" >Male
+            <input type="radio"> Female
+            <input type="radio"> Other
+        </td>
+        </tr>
+        <tr>
+            <td>Age:</td>
+            <td><input type="text" id="age" name="age">
+            </td>
+        </tr>
+         <tr>
+            <td>Stream:</td>
+            <td><input type="text" id="stream" name="stream"> </td>
+        </tr>
+
+        <tr>
+            <td colspan ="2" align="center">
+                <input onclick="return validate();" type="submit" name="save"
+                 value="submit"/></td>
+
+        </tr>
+    </table>
+    </form>
+</body>
+</html>
+
+<script>
+
+  
+    function validate(){
+
+        var nameId = document.getElementById('name').value
+        var nameError = document.getElementById('nameError');
+        var temp = false;
+        if(nameId=="")
+        {
+            nameError.innerText = "Name can not be empty."
+            temp = false;
+        }
+        else{
+            nameError.innerText="";
+            temp=true;
+        }
+        return temp;
+        
+    }
+</script>
+ -->
+
+
+ <!DOCTYPE html>
+<html>
+<head>
+  <style>
+      .error{
+        color:red;
+      }
+  </style>
+</head>
+<body>
+    <form action="doSave.html">
+    <table border="1">
+        <tr>
+            <td>Name:</td>
+            <td><input type="text"  id ="name" name="name"/>
+            <br><span class="error" id ="nameError"></span></td>
+        </tr>
+        <tr> 
+            <td>Email:</td>
+            <td><input type="text" id ="email" name="email"/></td>
+        </tr>
+        <tr>
+            <td>Moblie No:</td>
+            <td><input type="text" id="moblie" name="moblie"/></td>
+        </tr>
+         <tr>
+            <td>Gender:</td>
+            <td><input type="radio" >Male
+            <input type="radio"> Female
+            <input type="radio"> Other
+        </td>
+        </tr>
+        <tr>
+            <td>Age:</td>
+            <td><input type="text" id="age" name="age">
+            </td>
+        </tr>
+         <tr>
+            <td>Stream:</td>
+            <td><input type="text" id="stream" name="stream"> </td>
+        </tr>
+
+        <tr>
+            <td colspan ="2" align="center">
+                <input onclick="return validate();" type="submit" name="save"
+                 value="submit"/></td>
+
+        </tr>
+    </table>
+    </form>
+</body>
+</html>
+
+<script>
+    
+  var nameId = document.getElementsById('name');
+  var nameError = document.getElementsById('nameError');
+
+  nameId.addEventListener("blur",checkName);
+  nameId.addEventListener("keyup",checkName);
+
+  function validate()
+   {
+      var temp = true;
+      if(!checkName())
+        temp = false;
+    return temp;
+  }
+
+  function checkName()
+  {
+    if(nameId.value=="")
+        
+  }
+</script>

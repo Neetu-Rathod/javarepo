@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todolist</title>
+    <style>
+        table{
+            width: 60%;
+            border: 1px solid black;
+            margin-left: 10%;
+            margin-top: 50px;
+        }
+        /* #taskList{
+            margin-left: 10px;
+            margin-right: 10px;
+        } */
+    </style>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <th>Add Task</th>
+            <th>Task List</th>
+        </tr>
+        <tr>
+            <td>
+                <div>
+                    Task Heading:<br>
+                    <input type="text" id="task_heading">
+                </div>
+                <div>
+                    Task Description:<br>
+                    <textarea id="task_desc">
+
+
+
+                    </textarea>
+                </div>
+                <button onclick="save()">Save</button>
+            </td>
+            <td>
+                <div id="taskList"></div>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
+<script>
+
+    function save()
+    {
+        let heading = document.getElementById('task_heading');
+        let desc = document.getElementById('task_desc');
+        let val = JSON.parse(localStorage.getItem("list"));
+        let obj = {};
+
+        if(val!=null)
+        {
+            obj = val;
+        }
+        obj[heading.value.trim()] = desc.value.trim();
+        localStorage.setItem('list',JSON.stringify(obj));
+        taskList();
+
+    }
+    taskList();
+
+    function taskList()
+    {
+        let list = document.getElementById('taskList');
+        let val = JSON.parse(localStorage.getItem("list"));
+        var s="";
+        for(var key in val)
+        {
+            s+= `<div class="alert alert-success">
+                <button type="button" onclick="delectData(${key})" class="close"
+                data-dismiss="alert">x</button>
+                <strong class ="heading">${key}:</strong>${val[key]}
+                </div>`;
+        }
+        list.innerHTML = s;
+
+    }
+
+    function delectData(removeKey){
+        if(confirm("Are you sure to delete this item?"))
+        {
+            let val =JSON.parse(localStorage.getItem("list"));
+            let obj ={};
+
+            for(var key in val)
+            {
+                if(removeKey!=key)
+                {
+                    obj[key] = val[key];
+                }
+            }
+            localStorage.setItem('list,')
+        }
+    }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-DoList</title>
+    <style>
+       .{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: 'Open Sans',sans-serif;
+       }
+       main{
+        width: 100%;
+        height: 100vh;
+        background-color: rgb(8, 253, 253);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       }
+       .box{
+         width:700px ;
+         min-height: 500px;
+         background-color: aliceblue;
+         border-radius: 5px;
+         padding: 15px;
+       }
+       #item{
+         width: 97%;
+         padding: 10px;
+         font-size: 20px;
+         border: 0;
+         outline: 0;
+         display: block;
+         font-weight: bold;
+         box-shadow: 0px 0px 2px gray;
+       }
+       #To-Do-box {
+        margin-top: 20px;
+        list-style: none;
+          
+       }
+       #To-Do-box li{
+        position: relative;
+        background-color: rgb(114, 114, 236);
+        padding: 10px;
+        color: white;
+        border-radius: 2px;
+        padding-right:30px ;
+        text-align: justify;
+        margin-top: 10px;
+        user-select: none;
+       }
+       #To-Do-box li i{
+        position: absolute;
+        right: 10px;
+        top: 10px;
+       }
+       .done{
+          text-decoration: line-through;
+          color: black;
+          background-color: rgb(160, 202, 235) !important;
+       }
+       
+    </style>
+</head>
+<body>
+   <main>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <div class="box">
+        <input type="text" id="item" autofocus placeholder="Write Somthing here.....">
+        <ul id="To-Do-box">
+           
+        </ul>
+    </div>
+   </main>
+
+
+     <script>
+       const item= document.querySelector("#item")
+       const toDoBox = document.querySelector("#To-Do-box")
+       item.addEventListener(
+        "keyup",
+        function(event)
+        {
+            if(event.key =="Enter")
+            {
+                addToDo(this.value)
+                this.value=""
+            }
+        }
+       )
+       
+       const addToDo = (item) =>{
+        const listItem = document.createElement("li");
+        listItem.innerHTML =`
+        ${item}
+        <i class="fa fa-times" aria-hidden="true"></i>
+        `;
+
+        listItem.addEventListener(
+            "click",
+            function(){
+                this.classList.toggle("done");
+            }
+        )
+        listItem.querySelector("i").addEventListener(
+            "click",
+            function()
+            {
+                listItem.remove()
+            }
+        )
+        toDoBox.appendChild(listItem)
+       }
+
+     </script>
+</body>
+</html> -->

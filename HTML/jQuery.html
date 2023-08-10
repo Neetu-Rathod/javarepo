@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JQuery</title>
+
+</head>
+
+<body>
+  <p>this is my body1</p>
+  <p id='second'>this is my body2</p>
+  <p class='odd'>this is my body3</p>
+  <p class='odd'>this is my body4</p>
+  <p>this is my body5</p>
+
+  <script src="jQuery_files/code.jquery.com_jquery-3.7.0..js"></script>
+  <!-- <script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script> -->
+  <script>
+
+    $(document).ready(function () {
+      //your jquery code here.
+      console.log("we are using jquery");
+      //jquery Syntex .
+      // $(`selector`).action()
+
+      //$(`p`).click();// clicked on p.
+      $(`p`).click(function () {
+        console.log('you click on p', this);
+        // $(this).hide();
+        // $(`#id`).hide();
+        // $(`.class`).hide();
+      });
+
+    })
+    //  there are three main types od selectors in jQuery
+    //  1. Element.
+    //  2. class.
+    //  3. id.
+
+     //1. Element selector example... which click on all p -->
+      // $(`p`).click();
+      // 2. id  selector example -->
+     // $(`.odd`).click();
+       // 3. id  selector example -->
+       // $(`#second`).click();
+
+       //other selector
+       // $(`*`).click();//click on all the element.
+        //$(`p.odd`).click();
+        $(`p:first`).click();
+
+  </script>
+</body>
+
+</html>

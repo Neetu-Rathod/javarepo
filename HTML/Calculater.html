@@ -1,0 +1,267 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .main{
+            background-color:black;
+            height: 500px;
+            width: 350px;
+        }
+        .screen{
+           border:solid grey;
+           height: 80px;
+           font-size: 30px;
+        
+        }
+        .btn
+        {
+            width: 83px;
+            height: 79px;
+            border-radius: 20%;
+            background-color:#e4e1b6;
+        }
+    </style>
+    
+    <title>Document</title>
+</head>
+<body>
+    <div class="main">
+        <div class="screen">
+            <div >
+                <span id="s2" style="color: white;text-align: 300px;">2</span>
+                <span id="opreator"style="color: white;">+</span>
+            </div>
+            <div id="s2">
+                <span id="s1" style="color: white; text-align: 300px;">3</span>
+            </div>
+
+        </div>
+        <table>
+            <tr>
+                <td><button onclick="clear('AC')" class="btn" style="color:orangered; font-size: larger;">AC</button></td>
+                <td><button onclick="removeDigit('=>')" class="btn" style="color:orangered; font-size: larger;">=></button></td>
+                <td><button onclick="operator('%')" class="btn" style="color:orangered; font-size: larger;">%</button></td>
+                <td><button onclick="operator('/')" class="btn"  style="color:orangered; font-size: larger;">/</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="input('1')" class="btn">1</button></td>
+                <td><button onclick="input('2')" class="btn">2</button></td>
+                <td><button onclick="input('3')" class="btn">3</button></td>
+                <td><button onclick="operator('x')" class="btn"style="color:orangered; font-size: larger;">x</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="input('4')" class="btn">4</button></td>
+                <td><button onclick="input('5')" class="btn">5</button></td>
+                <td><button onclick="input('6')" class="btn">6</button></td>
+                <td><button onclick="operator('+')" class="btn"style="color:orangered; font-size: larger;">+</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="input('7')" class="btn">7</button></td>
+                <td><button onclick="input('8')" class="btn">8</button></td>
+                <td><button onclick="input('9')" class="btn">9</button></td>
+                <td><button onclick="operator('-')" class="btn"style="color:orangered; font-size: larger;">-</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="input('0')" class="btn">0</button></td>
+                <td><button onclick="input('00')" class="btn">00</button></td>
+                <td><button onclick="input('=')" class="btn">=</button></td>
+                <td><button onclick="operator('.')" class="btn"style="color:orangered; font-size: larger;">.</button></td>
+            </tr>
+        </table>
+        
+    </div>
+   
+</body>
+</html>
+<script>
+   var val1= document.getElementById("val1");
+     var val2= document.getElementById("val2");
+     var operator = document.getElementById("operaor");
+    
+    
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ -->
+
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Calculator</title>
+    <style>
+       .container{
+        background-color:black;
+        height: 300px;
+        width: 260px;
+        margin-left: 400px;
+        margin-top: 50px;
+        border-style: solid;
+       } 
+       .screen{
+        height: 50px;
+        background-color: rgb(217, 236, 236);
+        color: blue;
+       }
+       .cal-body{
+        height: 50px;
+       }
+       .btn{
+        height: 45px;
+        width: 60px;
+        color:orangered;
+         font-size: larger;
+       }
+       .s1{
+        text-align: right;
+        margin-right: 5px;
+        padding-top: 5px;
+       }
+       .s2{
+        text-align: right;
+        padding-top: 5px;
+        margin-right: 5px;
+       }
+       .td{
+        width: 63px;
+       }
+    </style>
+</head>
+<body>
+    <div class ="container">
+       <div class ="screen">
+        <div class="s1">
+         <span id="secondval"style="color: black;"></span>
+         <span id="operator"style="color: black;"></span>
+       </div>
+       <div class="s2" style="text-align: right; padding-top: 5px;">
+        <span id="firstval"style="color: black;">0</span>
+       </div>
+       </div>
+           
+       <div class="cal-body">
+        <table>
+            <tr>
+                <td><button class="btn" onclick="clr()">C</button></td>
+                <td><button class="btn" onclick="removeDigit()">=></button></td>
+                <td><button class="btn" onclick="operatorInput('%')">%</button></td>
+                <td><button class="btn" onclick="operatorInput('*')">*</button></td>
+            </tr>
+            <tr>
+                <td><button class="btn" onclick="input('1')">1</button></td>
+                <td><button class="btn" onclick="input('2')">2</button></td>
+                <td><button class="btn" onclick="input('3')">3</button></td>
+                <td><button class="btn" onclick="operatorInput('-')">/</button></td>
+            </tr>
+            <tr>
+                <td><button class="btn" onclick="input('4')">4</button></td>
+                <td><button class="btn" onclick="input('5')">5</button></td>
+                <td><button class="btn" onclick="input('6')">6</button></td>
+                <td><button class="btn" onclick="operatorInput('+')">+</button></td>
+            </tr>
+            <tr>
+                <td><button class="btn" onclick="input('7')">7</button></td>
+                <td><button class="btn" onclick="input('8')">8</button></td>
+                <td><button class="btn" onclick="input('9')">9</button></td>
+                <td><button class="btn" onclick="operatorInput('%')">%</button></td>
+            </tr>
+            <tr>
+                <td><button class="btn" onclick="input('0')">0</button></td>
+                <td><button class="btn" onclick="input('00')">00</button></td>
+                <td><button class="btn" onclick="input('.')">.</button></td>
+                <td><button class="btn" onclick="operation('=')">=</button></td>
+            </tr>
+        
+           
+        </table>
+
+       </div>
+    </div>
+</body>
+</html>
+<script>
+  var firstval =document.getElementById('firstval');
+  var secondval =document.getElementById('secondval');
+  var operator =document.getElementById('operator');
+
+  function input(val)
+  {
+  //  alert("helo")
+    if(firstval.innnerText!="0")
+       firstval.innerText =val;
+       else
+       firstval.innerText +=val;
+  }
+
+  function removeDigit(){
+    var val = firstval.innerText;
+    if(val.length==1)
+       firstval.innerText = 0;
+       else
+       firstval.innerText = val.substring(0,val.length-1);
+  }
+
+  function operation()
+  {
+    var n1 = Number(firstval.innerText);
+    var n2 = Number(secondval.innerText);
+    var optr = operator.innerText;
+    var ans = 0;
+    if(optr =="+")
+         ans= n2+n1;
+       else if(optr=="-")
+         ans = n2-n1;
+         else if(optr=="*")
+          ans = n2*n1;
+          else if(optr=="/")
+           ans =n2-n1;
+           else if(optr=="%")
+           ans = n2%n1;
+           clr();
+           firstval.innerText= ans;
+  }
+
+  function operatorInput(optr)
+  {
+    if(operator.innerText!="" && firstval.innerText!="0")
+    {
+        operation();
+        secondvaal.innerText = firstval.innerText;
+        operator.innerText = optr;
+        firstval.innerText="0";
+    }
+    else if(operator.innerText!=""&& firstval.innnerText=="0")
+    {
+        operator.innerText = optr;
+    }
+    else
+    {
+        secondval.innerText = firstval.innerText;
+        operator.innerText = optr;
+        firstval.innerText = "0";
+    }
+    }
+  
+
+     function clr()
+     {
+        firstval.innerText = "0";
+        secondval.innerText = "";
+        operator.innerText ="";
+     }
+</script>

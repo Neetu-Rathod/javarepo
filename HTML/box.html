@@ -1,0 +1,124 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body >
+    <button onclick="print()"> Click me</button>
+    <div id="text">
+
+    </div>
+
+</body>
+</html>
+<script>
+    function print(){
+        alert("hello");
+    }
+</script> -->
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body >
+    <button onclick="print()"> Click me</button>
+    <div id="text">
+
+    </div>
+
+</body>
+</html>
+<script>
+    var i =0;
+    function print(){
+        //var i=0;
+        var div = document.getElementById('text');
+        i++;
+        div.innerHTML = i;
+    }
+</script> -->
+<!-- 
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body >
+    <button onclick="print()"> Click me</button>
+    <div id="text">
+
+    </div>
+
+</body>
+</html>
+<script>
+    var btn = document.getElementById('btn');
+    var input =document.getElementById('input');
+
+    btn.addEventListener("Click",print);
+    var i =0;
+    function print(){
+        //var i=0;
+        var div = document.getElementById('text');
+        var input = document.getElementById('input');
+        var no = parseInt(input.value);
+        var s="";
+        for(i=1;i<=10;i++)
+        {
+            s= s+"<br>"+no*i;
+        }
+        div.innerHTML = s;
+        
+        div.innerHTML = i;
+    }
+</script> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .div{
+            background-color: aqua;
+            height: 50px;
+            width: 50px;
+
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td><div class="div"></div></td>
+            <td><div class="div"></div></td>
+        </tr>
+        <tr>
+            <td><div class="div"></div></td>
+            <td><div class="div"></div></td>
+        </tr>
+        
+    </table>
+    
+</body>
+</html>
+<script>
+    var divs= document.getElementByIdClassName("div");
+   
+    for(i=0;i<divs.length;i++)
+    {
+         alert("hello");
+       divs[i].addEventListener("mouseenter",function(){
+        this.style.backgroundColor = "white";
+       });
+       divs[i].addEventListener("mouseout",function(){
+        this.style.backgroundColor = "red";
+       });
+       
+    }
+</script>

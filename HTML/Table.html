@@ -1,0 +1,83 @@
+ <!-- <!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+<input type="text" id="input" value="5">
+
+<br><br>
+
+<button id ="btn">print Table</button>
+
+<br><br>
+	<div id="text">
+		phle button dabao.
+	</div>
+</body>
+</html>
+
+<script>
+
+	var btn =document.getElementById("btn");
+	var input=document.getElementById('input');
+	var div =document.getElementById('text');
+
+	btn.addEventListener("click",print);
+	input.addEventListener("mouseenter",print);
+	input.addEventListener("mouseout",function()
+	{
+		div.innerHTML="";
+	});
+	 var i=0;
+	 function print()
+	 {
+	 	var div=document.getElementById("text");
+
+	 var no=parseInt(input.value);
+	 var s="";
+	 for(i=1;i<=10;i++)
+	 {
+	 	s=s+"<br>"+no*i;
+	 }
+	 div.innerHTML=s;
+	}
+</script>
+
+ -->
+
+<!-- 
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+ </head>
+ <body>
+    <input type="text" id="input" value="5">
+    <br>
+    <br>
+    <button id="btn"> Print Table</button>
+ </body>
+ </html>
+ <script>
+
+   function table(number)
+   {
+        for(var i=1;i<=10;i++)
+        {
+            var res = i*number;
+           // console.log(res);
+           console.log(`${number} x ${i} = ${res}`);
+        }
+   }
+   table(5);
+   table(7);
+ </script>
+
+
+ -->
+
+
+ 
